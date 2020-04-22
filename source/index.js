@@ -19,13 +19,22 @@ var knex = require('knex')({
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine', 'hbs');
 app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({extend:false}));
+app.use(bodyparser.urlencoded({extend:true}));
 app.use('/assets',express.static(__dirname+'/public'));
 app.use('/assets',express.static(__dirname+'/assets'));
 
 
 app.get('/', (req,res) =>{
     res.sendFile(path.join(__dirname,'login.html'));
+})
+app.post('/login',(req,res)=>{
+  console.log(req.body);
+  
+    loginData = JSON.stringify(req.body);
+    console.log(loginData);
+    
+
+
 })
 
 app.listen(8000,()=>{

@@ -102,7 +102,7 @@ body {
   background-color: #f7ed4a !important;
 }
 .bg-warning {
-  background-color: #232323 !important;
+  /* background-color: #232323 !important; */
 }
 .bg-danger {
   background-color: #767676 !important;
@@ -587,7 +587,7 @@ blockquote {
   border-bottom-left-radius: 0 !important;
 }
 .form3 input[type="email"] {
-  border-radius: 100px !important;
+  /* border-radius: 100px !important; */
 }
 @media (max-width: 349px) {
   .form2 input[type="email"] {

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html  >
 <head>
-  
+  <!-- Site made with Mobirise Website Builder v4.12.3, https://mobirise.com -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v4.12.3, techsparagus.comm">
+  <meta name="generator" content="Mobirise v4.12.3, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
   <meta name="description" content="">
   
   
-  <title>Tasklyst | Login</title>
+  <title>Tasklyst | Add Task</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -46,18 +46,18 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="https://techsparagus.com"><span class="mbri-globe-2 mbr-iconfont mbr-iconfont-btn"></span>
+                    <a class="nav-link link text-white display-4" href="https://mobirise.co"><span class="mbri-globe-2 mbr-iconfont mbr-iconfont-btn"></span>
                         
                         Visit Developer</a>
                 </li></ul>
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="https://techsparagus.com">
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="https://mobirise.co">
                     <span class="mbri-save mbr-iconfont mbr-iconfont-btn "></span>
                     Buy Developer a Coffe</a></div>
         </div>
     </nav>
 </section>
 
-<section class="engine"><a href="https://techsparagus.com/">site design templates</a></section><section class="mbr-section form3 cid-rWNlotxCth" id="form3-8">
+<section class="engine"><a href="https://mobirise.info/m">site design templates</a></section><section class="mbr-section form3 cid-rWNlotxCth" id="form3-8">
 
     
 
@@ -66,7 +66,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="title col-12 col-lg-8">
-                <h2 class="align-center pb-2 mbr-fonts-style display-2">Login to Tasklyst</h2>
+                <h2 class="align-center pb-2 mbr-fonts-style display-2">
+                    Add Task</h2>
                 <h3 class="mbr-section-subtitle align-center pb-5 mbr-light mbr-fonts-style display-5"></h3>
             </div>
         </div>
@@ -74,32 +75,33 @@
         <div class="row py-2 justify-content-center">
             <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
                 <!---Formbuilder Form--->
-                <form  id="loginForm" class="mbr-form form-with-styler" >
-                
-                   <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" id="formmail" class="form-control" >
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                   </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" id="formpass" class="form-control" >
+                <form action="http://localhost:8000/login" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="YwfXoA8Wd17IJMbP92x4PWpgUpVT1WEBCo3vbEtoYdUJ2257GjV7ZbjIlQs+Rm1CTDK/hFCA3QeQ+ClOnG6nR9cRhziaCGpy27Fz4P1d34aUKOyVL6MY/mhmjo5aD87N">
+                    <div class="row">
+
+                        <div class="col-md-12" >
+                         <div class="form-group">
+                          <label > Task Title</label>
+                          <input type="text" class="form-control" name="title" placeholder="e.g. Buy Milk" >
+                        </div>
+                        </div>
+                          <div class="col-md-12" >
+                           <div class="form-group">
+                          <label > Task Description</label>
+                            <textarea class="form-control" rows="3"  name="description" placeholder="e.g. Grocery store name, Milk brand, Quantity" ></textarea>
+                        </div>
+                        </div>
+
+
+            
+
+
+                        <div class="col-auto input-group-btn"><button type="submit" class="btn  btn-primary display-4">Add Task</button></div>
                     </div>
-                   
-                    <button type="submit" class="btn btn-primary">Submit </button>
                 </form><!---Formbuilder Form--->
-            <a  href="signup.html">Not Registered yet, Sign Up</a>
-            <div class="progress">
-                 <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
             </div>
         </div>
-        
-
     </div>
 </section>
-<!-- Jquery AJAX POST -->
-
 
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
@@ -114,37 +116,7 @@
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/formoid/formoid.min.js"></script>
   
-  <script>
-    $(document).ready(function (event) {
-    $('#loginForm').submit(function(){
-        var postLogin = {};
-        postLogin.email= $("#formmail").val();
-        postLogin.pass = $("#formpass").val();
-
-        $.ajax({
-                type:'POST',
-                data: JSON.stringify(postLogin),
-                contentType: 'application/json',
-                url: "http://localhost:8000/login",
-
-                success: function(data){
-                    console.log('login successful');
-                },
-                error: function(err){
-                    console.error(err);
-                
-                }
-                
-
-
-        })
-
-
-
-    });
-        
-    });
-</script>
+  
   <input name="animation" type="hidden">
   </body>
 </html>
