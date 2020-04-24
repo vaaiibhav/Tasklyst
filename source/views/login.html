@@ -75,7 +75,7 @@
             <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
                 <!---Formbuilder Form--->
                 <form  id="loginForm" class="mbr-form form-with-styler" >
-                
+                <label style="color: red;" id="error_display"></label>
                    <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" id="formmail" class="form-control" >
@@ -128,7 +128,9 @@
                 url: "http://localhost:8000/login",
 
                 success: function(data){
-                    console.log('login successful');
+                    $('#error_display').text(data);
+
+                    console.log(data);
                 },
                 error: function(err){
                     console.error(err);
